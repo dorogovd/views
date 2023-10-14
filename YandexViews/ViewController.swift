@@ -19,11 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper! // степпер
     @IBOutlet weak var timeLabel: UILabel! // лэйбл "время"
     @IBOutlet weak var scoreLabel: UILabel! // лэйбл последний счёт
-    @IBOutlet weak var gameFieldView: UIView! // вьюшка "игровое поле"
+    @IBOutlet weak var gameFieldView: GameFieldView! // вьюшка "игровое поле"
     @IBOutlet weak var actionButton: UIButton! // кнопка "старт"
-    @IBOutlet weak var shapeX: NSLayoutConstraint! // констрейнт фигуры (по умолчанию равен 0)
-    @IBOutlet weak var shapeY: NSLayoutConstraint! // констрейнт фигуры (по умолчанию равен 0)
-    @IBOutlet weak var gameObject: UIImageView! // аутлет фигуры
+//    @IBOutlet weak var shapeX: NSLayoutConstraint! // констрейнт фигуры (по умолчанию равен 0)
+//    @IBOutlet weak var shapeY: NSLayoutConstraint! // констрейнт фигуры (по умолчанию равен 0)
+//    @IBOutlet weak var gameObject: UIImageView! // аутлет фигуры
     
     @IBAction func actionButtonTapped(_ sender: UIButton) { // кнопка "старт"
         if isGameActive {
@@ -33,7 +33,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func objectTapped(_ sender: UITapGestureRecognizer) {
+//    @IBAction
+    func objectTapped() {
         guard isGameActive else { return } // защита от нажатия пока игра не активна
             repositionImageWithTimer()
             score += 1
@@ -82,7 +83,7 @@ class ViewController: UIViewController {
     }
     
     private func updateUI() {
-        gameObject.isHidden = !isGameActive // фигура появляется только после начала игры
+        gameFieldView.isShapeHidden = !isGameActive
         stepper.isEnabled = !isGameActive // кнопка степпер активна только вне игры
         if isGameActive {
             timeLabel.text = "Time left: \(Int(gameTimeLeft)) sec"
@@ -103,10 +104,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func moveImage() { // перемещение фигуры по полю
-        let maxX = gameFieldView.bounds.maxX - gameObject.frame.width // ограничиваем макс значения констрейнтов фигуры размерами поля (минус размеры фигуры, чтобы она не вылезала за экран)
-        let maxY = gameFieldView.bounds.maxY - gameObject.frame.height
-        shapeX.constant = CGFloat(arc4random_uniform(UInt32(maxX))) // генерирует случайные числа
-        shapeY.constant = CGFloat(arc4random_uniform(UInt32(maxY)))
+        gameFieldView.randomizeShapes()
     }
     
     override func viewDidLoad() { // метод вызывается после закрузки всех вьюшек
@@ -116,6 +114,8 @@ class ViewController: UIViewController {
         gameFieldView.layer.borderColor = UIColor.gray.cgColor
         gameFieldView.layer.cornerRadius = 5
         updateUI()
+        gameFieldView.shapeHitHandler = { [weak self] in self?.objectTapped()
+        }
     }
     
 //    override func didReceiveMemoryWarning() {

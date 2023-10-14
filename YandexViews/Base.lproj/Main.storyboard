@@ -23,26 +23,14 @@
                                     <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="YpP-ev-CTF"/>
                                 </connections>
                             </stepper>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaC-OD-P7G">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaC-OD-P7G" customClass="gameFieldView" customModule="YandexViews" customModuleProvider="target">
                                 <rect key="frame" x="16" y="100" width="343" height="511"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle-xxl" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-MD-4yA">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="FtC-v6-S5a"/>
-                                            <constraint firstAttribute="height" constant="80" id="Wt6-2l-24C"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="BPv-MO-UdQ" appends="YES" id="Bta-Hl-1oM"/>
-                                        </connections>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
-                                <constraints>
-                                    <constraint firstItem="hZx-MD-4yA" firstAttribute="top" secondItem="HaC-OD-P7G" secondAttribute="top" id="qvK-qd-ua1"/>
-                                    <constraint firstItem="hZx-MD-4yA" firstAttribute="leading" secondItem="HaC-OD-P7G" secondAttribute="leading" id="u2a-mq-O8Z"/>
-                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shapeSize">
+                                        <size key="value" width="80" height="800"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPr-cI-z2k">
                                 <rect key="frame" x="156.5" y="57" width="62" height="35"/>
@@ -86,10 +74,7 @@
                     <connections>
                         <outlet property="actionButton" destination="zPr-cI-z2k" id="G5A-x3-bhB"/>
                         <outlet property="gameFieldView" destination="HaC-OD-P7G" id="3LO-Gx-vYh"/>
-                        <outlet property="gameObject" destination="hZx-MD-4yA" id="p8I-0f-3Ac"/>
                         <outlet property="scoreLabel" destination="N4X-MO-5FZ" id="MUR-zI-LNv"/>
-                        <outlet property="shapeX" destination="u2a-mq-O8Z" id="k2Y-S9-CfQ"/>
-                        <outlet property="shapeY" destination="qvK-qd-ua1" id="hR7-2d-mlC"/>
                         <outlet property="stepper" destination="nSJ-lV-lsg" id="4SO-45-rIt"/>
                         <outlet property="timeLabel" destination="H4X-mG-b3N" id="nbG-MJ-zYk"/>
                     </connections>
@@ -105,7 +90,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="triangle-xxl" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
