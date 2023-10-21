@@ -1,18 +1,66 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameControlView" customModule="YandexViews" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="QFp-ab-OtZ" id="0ZD-Wc-wnh"/>
+                <outlet property="stepper" destination="wqq-M0-yXK" id="dpu-5h-YcG"/>
+                <outlet property="timeLabel" destination="DLj-7e-gWf" id="vGM-oE-wXU"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="481" height="157"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-M0-yXK">
+                    <rect key="frame" x="387" y="0.0" width="94" height="32"/>
+                    <connections>
+                        <action selector="stepperChanged:" destination="-1" eventType="valueChanged" id="hnO-56-vze"/>
+                    </connections>
+                </stepper>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFp-ab-OtZ">
+                    <rect key="frame" x="209.66666666666666" y="29" width="61.999999999999972" height="94"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                    <connections>
+                        <action selector="actionButtonTapped:" destination="-1" eventType="touchUpInside" id="4Mh-1w-pI6"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiime: 30 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-7e-gWf">
+                    <rect key="frame" x="0.0" y="5.6666666666666661" width="102" height="20.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="QFp-ab-OtZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="13k-Q6-g5d"/>
+                <constraint firstItem="wqq-M0-yXK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="F05-lS-D9n"/>
+                <constraint firstItem="DLj-7e-gWf" firstAttribute="centerY" secondItem="wqq-M0-yXK" secondAttribute="centerY" id="KPD-4U-DBt"/>
+                <constraint firstItem="QFp-ab-OtZ" firstAttribute="top" secondItem="wqq-M0-yXK" secondAttribute="bottom" constant="-3" id="VKs-mY-5Rq"/>
+                <constraint firstItem="DLj-7e-gWf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sct-Sg-LAz"/>
+                <constraint firstItem="wqq-M0-yXK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DLj-7e-gWf" secondAttribute="trailing" id="vyX-79-TKH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QFp-ab-OtZ" secondAttribute="bottom" id="ySa-Bq-fpX"/>
+                <constraint firstAttribute="trailing" secondItem="wqq-M0-yXK" secondAttribute="trailing" id="zxC-ag-9fu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="206.87022900763358" y="-225"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

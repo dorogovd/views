@@ -16,6 +16,8 @@
 		63101BE22AB5F548000C1E04 /* YandexViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63101BE12AB5F548000C1E04 /* YandexViewsTests.swift */; };
 		63101BEC2AB5F548000C1E04 /* YandexViewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63101BEB2AB5F548000C1E04 /* YandexViewsUITests.swift */; };
 		63101BEE2AB5F548000C1E04 /* YandexViewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63101BED2AB5F548000C1E04 /* YandexViewsUITestsLaunchTests.swift */; };
+		63968A902ADDA091001E8731 /* GameControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63968A8F2ADDA091001E8731 /* GameControlView.xib */; };
+		63968A922ADDA433001E8731 /* GameControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63968A912ADDA433001E8731 /* GameControlView.swift */; };
 		63FADD362ABCC05000A517E9 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FADD352ABCC05000A517E9 /* GameFieldView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		63101BE72AB5F548000C1E04 /* YandexViewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexViewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63101BEB2AB5F548000C1E04 /* YandexViewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexViewsUITests.swift; sourceTree = "<group>"; };
 		63101BED2AB5F548000C1E04 /* YandexViewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexViewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63968A8F2ADDA091001E8731 /* GameControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameControlView.xib; sourceTree = "<group>"; };
+		63968A912ADDA433001E8731 /* GameControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControlView.swift; sourceTree = "<group>"; };
 		63FADD352ABCC05000A517E9 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,8 @@
 				63101BD32AB5F548000C1E04 /* Assets.xcassets */,
 				63101BD52AB5F548000C1E04 /* LaunchScreen.storyboard */,
 				63101BD82AB5F548000C1E04 /* Info.plist */,
+				63968A8F2ADDA091001E8731 /* GameControlView.xib */,
+				63968A912ADDA433001E8731 /* GameControlView.swift */,
 			);
 			path = YandexViews;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			files = (
 				63101BD72AB5F548000C1E04 /* LaunchScreen.storyboard in Resources */,
 				63101BD42AB5F548000C1E04 /* Assets.xcassets in Resources */,
+				63968A902ADDA091001E8731 /* GameControlView.xib in Resources */,
 				63101BD22AB5F547000C1E04 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +271,7 @@
 				63101BCF2AB5F547000C1E04 /* ViewController.swift in Sources */,
 				63101BCB2AB5F547000C1E04 /* AppDelegate.swift in Sources */,
 				63101BCD2AB5F547000C1E04 /* SceneDelegate.swift in Sources */,
+				63968A922ADDA433001E8731 /* GameControlView.swift in Sources */,
 				63FADD362ABCC05000A517E9 /* GameFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +381,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
